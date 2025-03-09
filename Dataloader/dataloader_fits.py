@@ -23,7 +23,6 @@ class SunImageDataset(Dataset):
         for path in list_of_paths:
             # Read FITS file
             hdul = fits.open(path, mode="readonly")
-            header = hdul[1].header
             image = hdul[1].data
 
             # Convert PIL image to numpy array

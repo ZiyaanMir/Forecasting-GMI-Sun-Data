@@ -21,7 +21,6 @@ class SunImageDataset(Dataset):
         y_label = torch.tensor(self.annotaions.iloc[index, 1])
         list_of_paths = eval(self.annotaions.iloc[index, 0])
         for path in list_of_paths:
-            # image = io.imread(path)
             ImageFile.LOAD_TRUNCATED_IMAGES = True
             image = Image.open(path)
             if image.size != (224, 224):
