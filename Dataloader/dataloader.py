@@ -30,4 +30,7 @@ class SunImageDataset(Dataset):
                 image = self.transform(image)
             list_of_images.append(image)
 
-        return list_of_images, y_label.float()
+        # return list_of_images, y_label.float()
+        # Stack images into a single tensor with shape [10, 1, 224, 224]
+        images = torch.stack(list_of_images)
+        return images, y_label.float()
