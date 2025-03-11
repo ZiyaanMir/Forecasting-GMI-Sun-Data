@@ -29,9 +29,9 @@ class SunImageDataset(Dataset):
             # image_array = np.array(image).astype(np.float32)
             image_array = image.astype(np.float32)
             # Apply min-max normalization
-            if image_array.max() > image_array.min():  # Avoid division by zero
-                image_array = (image_array - image_array.min()) / \
-                    (image_array.max() - image_array.min())
+            # if image_array.max() > image_array.min():  # Avoid division by zero
+            #     image_array = (image_array - image_array.min()) / \
+            #         (image_array.max() - image_array.min())
 
             # Convert to tensor
             image = torch.from_numpy(image_array)
