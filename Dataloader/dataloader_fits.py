@@ -5,6 +5,8 @@ import torch
 from torch.utils.data import Dataset
 from skimage import io
 from astropy.io import fits
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning, append=True)
 
 
 class SunImageDataset(Dataset):
